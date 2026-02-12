@@ -1,0 +1,705 @@
+ GCCcore/13.2.0 loaded.
+ zlib/1.2.13 loaded.
+ binutils/2.40 loaded.
+ GCC/13.2.0 loaded.
+ libcxi/1.0.2 loaded.
+ libfabric/2.2.0rc1 loaded.
+ CUDA/12.4.0 loaded.
+ OpenMPI/5.0.3 loaded.
+ OpenBLAS/0.3.24 loaded.
+ FlexiBLAS/3.3.1 loaded.
+ FFTW/3.3.10 loaded.
+ FFTW.MPI/3.3.10 loaded.
+ ScaLAPACK/2.2.0-fb loaded.
+ foss/2023b loaded.
+ numactl/2.0.16 loaded.
+ XZ/5.4.4 loaded.
+ libxml2/2.11.5 loaded.
+ libpciaccess/0.17 loaded.
+ hwloc/2.9.2 loaded.
+ ncurses/6.4 loaded.
+ GMP/6.3.0 loaded.
+ bzip2/1.0.8 loaded.
+ libreadline/8.2 loaded.
+ Tcl/8.6.13 loaded.
+ SQLite/3.43.1 loaded.
+ libffi/3.4.4 loaded.
+ OpenSSL/1.1 loaded.
+ Python/3.11.5 loaded.
+ Z3/4.13.0 loaded.
+ Clang/17.0.6-CUDA-12.4.0 loaded.
+ magma/2.7.2-CUDA-12.4.0 loaded.
+ cuDNN/9.2.1.18-CUDA-12.4.0 loaded.
+ NCCL/2.20.5-CUDA-12.4.0 loaded.
+ NASM/2.16.01 loaded.
+ libjpeg-turbo/3.0.1 loaded.
+ libpng/1.6.40 loaded.
+ x264/20231019 loaded.
+ LAME/3.100 loaded.
+ x265/3.5 loaded.
+ expat/2.5.0 loaded.
+ Brotli/1.1.0 loaded.
+ freetype/2.13.2 loaded.
+ util-linux/2.39 loaded.
+ fontconfig/2.14.2 loaded.
+ xorg-macros/1.20.0 loaded.
+ X11/20231019 loaded.
+ FriBidi/1.0.13 loaded.
+ SDL2/2.28.5 loaded.
+ FFmpeg/6.0 loaded.
+ libogg/1.3.5 loaded.
+ FLAC/1.4.2 loaded.
+ libvorbis/1.3.7 loaded.
+ libopus/1.4 loaded.
+ mpg123/1.32.10 loaded.
+ libsndfile/1.2.2 loaded.
+ cuSPARSELt/0.6.1.0-CUDA-12.4.0 loaded.
+ Szip/2.1.1 loaded.
+ HDF5/1.14.3 loaded.
+---------------------------WARNING-----------------------
+Due to performance issues OMP_NUM_THREADS is set to 1
+If you see performance drop, carefully test larger values
+--------------------------------------------------------- 
+ ML-bundle/24.06a loaded.
+warning: Using incompatible environment (`/net/scratch/hscra/plgrid/plgsmendowski12/.venv_ts2img`) due to `--no-sync` (The project environment's Python version does not satisfy the request: `Python 3.10.13`)
+2026-02-08 11:08:28.231 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:39 - Loading configuration from configs/default.yaml
+2026-02-08 11:08:28.252 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:70 - Using zip: /net/scratch/hscra/plgrid/plgsmendowski12/ts2i_images/Daphnet/169_Daphnet_id_1_HumanActivity_tr_9693_1st_20732_ts2i_RN.zip for transformation RN
+2026-02-08 11:08:29.529 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:08:29.530 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:08:29.537 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training cnn_autoencoder on RN
+2026-02-08 11:08:30.147 | INFO     | src.models.cnn_autoencoder.training:train_autoencoder:22 - Device: cuda | Model on: cuda:0
+2026-02-08 11:09:03.504 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating cnn_autoencoder on RN
+2026-02-08 11:09:04.250 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.5993, std=0.4701
+2026-02-08 11:09:04.250 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.8989, std=0.2688
+2026-02-08 11:09:04.250 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=1.0000, Anomaly min=0.0041
+2026-02-08 11:09:13.797 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.253123717059225, 'AUC-ROC': 0.7704272781676995, 'VUS-PR': np.float64(0.2791409083135706), 'VUS-ROC': np.float64(0.7892912962135581), 'Standard-F1': np.float64(0.39589854545652114), 'PA-F1': 0.6511365240717211, 'Event-based-F1': np.float64(0.48829985504245144), 'R-based-F1': 0.39757902619916463, 'Affiliation-F': 0.8065696466575996}
+2026-02-08 11:09:14.233 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:09:14.233 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:09:14.514 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training resnet18_autoencoder_frozen on RN
+2026-02-08 11:09:14.533 | INFO     | src.models.resnet18_autoencoder.training:train_autoencoder_frozen:25 - Device: cuda | Model on: cuda:0
+2026-02-08 11:09:51.335 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating resnet18_autoencoder_frozen on RN
+2026-02-08 11:09:51.878 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.5461, std=0.4305
+2026-02-08 11:09:51.878 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.8298, std=0.2486
+2026-02-08 11:09:51.878 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=1.0000, Anomaly min=0.0021
+2026-02-08 11:10:00.882 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.17700044623971434, 'AUC-ROC': 0.7449517557818155, 'VUS-PR': np.float64(0.19914849027480344), 'VUS-ROC': np.float64(0.7609654160452864), 'Standard-F1': np.float64(0.3469287592708049), 'PA-F1': 0.6470856795008371, 'Event-based-F1': np.float64(0.40650406504065006), 'R-based-F1': 0.39757902619916463, 'Affiliation-F': 0.8531447677576888}
+2026-02-08 11:10:01.037 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:10:01.038 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:10:01.251 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training resnet18_autoencoder_progressive_unfreeze on RN
+2026-02-08 11:10:01.265 | INFO     | src.models.resnet18_autoencoder.training:train_autoencoder_progressive_unfreeze:133 - Device: cuda | Model on: cuda:0
+2026-02-08 11:10:50.644 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating resnet18_autoencoder_progressive_unfreeze on RN
+2026-02-08 11:10:51.155 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.5452, std=0.4309
+2026-02-08 11:10:51.155 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.8170, std=0.2487
+2026-02-08 11:10:51.156 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=1.0000, Anomaly min=0.0007
+2026-02-08 11:11:00.079 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.15910160232791426, 'AUC-ROC': 0.7356073993633302, 'VUS-PR': np.float64(0.1764216574887874), 'VUS-ROC': np.float64(0.745859561516189), 'Standard-F1': np.float64(0.27411428983694175), 'PA-F1': 0.5756707475905184, 'Event-based-F1': np.float64(0.2770829859374129), 'R-based-F1': 0.39757902619916463, 'Affiliation-F': 0.8111734306916006}
+2026-02-08 11:11:00.241 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:11:00.241 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:11:00.449 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training resnet18_autoencoder_differential_lr on RN
+2026-02-08 11:11:00.463 | INFO     | src.models.resnet18_autoencoder.training:train_autoencoder_differential_lr:271 - Device: cuda | Model on: cuda:0
+2026-02-08 11:11:38.252 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating resnet18_autoencoder_differential_lr on RN
+2026-02-08 11:11:38.672 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.5655, std=0.4419
+2026-02-08 11:11:38.672 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.8516, std=0.2398
+2026-02-08 11:11:38.672 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=1.0000, Anomaly min=0.0028
+2026-02-08 11:11:47.839 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.18399829828044517, 'AUC-ROC': 0.7549202624096762, 'VUS-PR': np.float64(0.19856162769594152), 'VUS-ROC': np.float64(0.7733898561218856), 'Standard-F1': np.float64(0.31810213328810794), 'PA-F1': 0.6559522116341915, 'Event-based-F1': np.float64(0.34193072955047865), 'R-based-F1': 0.39757902619916463, 'Affiliation-F': 0.8093433376099781}
+2026-02-08 11:11:47.995 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:11:47.995 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:11:49.022 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training pvt_autoencoder_frozen on RN
+2026-02-08 11:11:49.046 | INFO     | src.models.pvt_autoencoder.training:train_pvt_autoencoder_frozen:24 - Device: cuda | Model on: cuda:0
+2026-02-08 11:12:29.165 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating pvt_autoencoder_frozen on RN
+2026-02-08 11:12:29.543 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.5270, std=0.4112
+2026-02-08 11:12:29.543 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.7870, std=0.2151
+2026-02-08 11:12:29.543 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=1.0000, Anomaly min=0.0052
+2026-02-08 11:12:38.339 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.15280350485087396, 'AUC-ROC': 0.7412301121662889, 'VUS-PR': np.float64(0.16748031564079163), 'VUS-ROC': np.float64(0.7557778740911406), 'Standard-F1': np.float64(0.3249137328416788), 'PA-F1': 0.5378842895182765, 'Event-based-F1': np.float64(0.2900232018561482), 'R-based-F1': 0.39757902619916463, 'Affiliation-F': 0.806828273854016}
+2026-02-08 11:12:38.492 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:12:38.492 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:12:39.431 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training pvt_autoencoder_progressive_unfreeze on RN
+2026-02-08 11:12:39.455 | INFO     | src.models.pvt_autoencoder.training:train_pvt_autoencoder_progressive_unfreeze:132 - Device: cuda | Model on: cuda:0
+2026-02-08 11:13:40.257 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating pvt_autoencoder_progressive_unfreeze on RN
+2026-02-08 11:13:40.620 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.5458, std=0.4309
+2026-02-08 11:13:40.620 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.8227, std=0.2537
+2026-02-08 11:13:40.621 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=1.0000, Anomaly min=0.0018
+2026-02-08 11:13:49.684 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.22968421077678064, 'AUC-ROC': 0.7153570558029514, 'VUS-PR': np.float64(0.2283657660037927), 'VUS-ROC': np.float64(0.7261183385217076), 'Standard-F1': np.float64(0.4081855088962187), 'PA-F1': 0.6890293307405607, 'Event-based-F1': np.float64(0.43219231774235656), 'R-based-F1': 0.39757902619916463, 'Affiliation-F': 0.8393492061001431}
+2026-02-08 11:13:49.851 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:13:49.851 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:13:50.789 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training pvt_autoencoder_differential_lr on RN
+2026-02-08 11:13:50.813 | INFO     | src.models.pvt_autoencoder.training:train_pvt_autoencoder_differential_lr:267 - Device: cuda | Model on: cuda:0
+2026-02-08 11:14:39.289 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating pvt_autoencoder_differential_lr on RN
+2026-02-08 11:14:39.654 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.5736, std=0.4506
+2026-02-08 11:14:39.654 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.8439, std=0.2468
+2026-02-08 11:14:39.654 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=1.0000, Anomaly min=0.0023
+2026-02-08 11:14:48.887 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.18573460142870143, 'AUC-ROC': 0.6070432266575321, 'VUS-PR': np.float64(0.1503188945440844), 'VUS-ROC': np.float64(0.5616462588819967), 'Standard-F1': np.float64(0.26766645335056877), 'PA-F1': 0.7234145165179648, 'Event-based-F1': np.float64(0.5216836734693873), 'R-based-F1': 0.39757902619916463, 'Affiliation-F': 0.8316969229457505}
+2026-02-08 11:14:49.334 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:70 - Using zip: /net/scratch/hscra/plgrid/plgsmendowski12/ts2i_images/Daphnet/169_Daphnet_id_1_HumanActivity_tr_9693_1st_20732_ts2i_LP.zip for transformation LP
+2026-02-08 11:14:50.202 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:14:50.202 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:14:50.208 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training cnn_autoencoder on LP
+2026-02-08 11:14:50.213 | INFO     | src.models.cnn_autoencoder.training:train_autoencoder:22 - Device: cuda | Model on: cuda:0
+2026-02-08 11:15:26.220 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating cnn_autoencoder on LP
+2026-02-08 11:15:26.669 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.1005, std=0.1582
+2026-02-08 11:15:26.670 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.4793, std=0.1925
+2026-02-08 11:15:26.670 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=1.0000, Anomaly min=0.1204
+2026-02-08 11:15:31.288 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.45744992213769214, 'AUC-ROC': 0.9353089047125066, 'VUS-PR': np.float64(0.47992215783227976), 'VUS-ROC': np.float64(0.9396899857134385), 'Standard-F1': np.float64(0.5462983078751998), 'PA-F1': 0.8180205746718695, 'Event-based-F1': np.float64(0.6832298136645958), 'R-based-F1': 0.5895333862730993, 'Affiliation-F': 0.9322977286933306}
+2026-02-08 11:15:31.445 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:15:31.445 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:15:31.659 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training resnet18_autoencoder_frozen on LP
+2026-02-08 11:15:31.673 | INFO     | src.models.resnet18_autoencoder.training:train_autoencoder_frozen:25 - Device: cuda | Model on: cuda:0
+2026-02-08 11:16:07.382 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating resnet18_autoencoder_frozen on LP
+2026-02-08 11:16:07.878 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.1109, std=0.1542
+2026-02-08 11:16:07.878 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.4770, std=0.1986
+2026-02-08 11:16:07.878 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=1.0000, Anomaly min=0.1323
+2026-02-08 11:16:12.624 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.44858650359371083, 'AUC-ROC': 0.9329118776738796, 'VUS-PR': np.float64(0.4720352605188571), 'VUS-ROC': np.float64(0.9369582791021103), 'Standard-F1': np.float64(0.5548868067542797), 'PA-F1': 0.8098331870061457, 'Event-based-F1': np.float64(0.6703462117410933), 'R-based-F1': 0.5950356448658431, 'Affiliation-F': 0.9340936051625203}
+2026-02-08 11:16:12.782 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:16:12.782 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:16:12.992 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training resnet18_autoencoder_progressive_unfreeze on LP
+2026-02-08 11:16:13.006 | INFO     | src.models.resnet18_autoencoder.training:train_autoencoder_progressive_unfreeze:133 - Device: cuda | Model on: cuda:0
+2026-02-08 11:16:44.191 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating resnet18_autoencoder_progressive_unfreeze on LP
+2026-02-08 11:16:44.677 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.1103, std=0.1548
+2026-02-08 11:16:44.677 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.4830, std=0.1982
+2026-02-08 11:16:44.677 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=1.0000, Anomaly min=0.1083
+2026-02-08 11:16:49.426 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.45680408656099053, 'AUC-ROC': 0.9339160376495207, 'VUS-PR': np.float64(0.4799464467874845), 'VUS-ROC': np.float64(0.9382012505713014), 'Standard-F1': np.float64(0.5497546343552535), 'PA-F1': 0.8108298171589311, 'Event-based-F1': np.float64(0.6735001507386187), 'R-based-F1': 0.589157448700411, 'Affiliation-F': 0.9349036709315129}
+2026-02-08 11:16:49.586 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:16:49.586 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:16:49.799 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training resnet18_autoencoder_differential_lr on LP
+2026-02-08 11:16:49.813 | INFO     | src.models.resnet18_autoencoder.training:train_autoencoder_differential_lr:271 - Device: cuda | Model on: cuda:0
+2026-02-08 11:17:29.238 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating resnet18_autoencoder_differential_lr on LP
+2026-02-08 11:17:29.625 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.1094, std=0.1567
+2026-02-08 11:17:29.625 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.4960, std=0.2083
+2026-02-08 11:17:29.625 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=1.0000, Anomaly min=0.1080
+2026-02-08 11:17:34.360 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.47197993181187187, 'AUC-ROC': 0.9352238750371499, 'VUS-PR': np.float64(0.4920895599909476), 'VUS-ROC': np.float64(0.9399058828043901), 'Standard-F1': np.float64(0.5630449730629364), 'PA-F1': 0.8253400143163923, 'Event-based-F1': np.float64(0.7217182497331905), 'R-based-F1': 0.5877365470321197, 'Affiliation-F': 0.9331091851933905}
+2026-02-08 11:17:34.520 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:17:34.520 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:17:35.464 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training pvt_autoencoder_frozen on LP
+2026-02-08 11:17:35.488 | INFO     | src.models.pvt_autoencoder.training:train_pvt_autoencoder_frozen:24 - Device: cuda | Model on: cuda:0
+2026-02-08 11:18:13.534 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating pvt_autoencoder_frozen on LP
+2026-02-08 11:18:13.875 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.1065, std=0.1615
+2026-02-08 11:18:13.875 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.4993, std=0.1970
+2026-02-08 11:18:13.875 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=1.0000, Anomaly min=0.0923
+2026-02-08 11:18:18.618 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.458511315629753, 'AUC-ROC': 0.935244930004381, 'VUS-PR': np.float64(0.4792170464710251), 'VUS-ROC': np.float64(0.9395823744596279), 'Standard-F1': np.float64(0.5548868067542797), 'PA-F1': 0.8180205746718695, 'Event-based-F1': np.float64(0.6662531017369722), 'R-based-F1': 0.5777570310914445, 'Affiliation-F': 0.9382614395047769}
+2026-02-08 11:18:18.772 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:18:18.772 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:18:19.718 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training pvt_autoencoder_progressive_unfreeze on LP
+2026-02-08 11:18:19.742 | INFO     | src.models.pvt_autoencoder.training:train_pvt_autoencoder_progressive_unfreeze:132 - Device: cuda | Model on: cuda:0
+2026-02-08 11:18:58.275 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating pvt_autoencoder_progressive_unfreeze on LP
+2026-02-08 11:18:58.616 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.1141, std=0.1622
+2026-02-08 11:18:58.616 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.5056, std=0.2018
+2026-02-08 11:18:58.616 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=1.0000, Anomaly min=0.1078
+2026-02-08 11:19:03.417 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.4544495714963782, 'AUC-ROC': 0.933775131330358, 'VUS-PR': np.float64(0.47342533152744865), 'VUS-ROC': np.float64(0.9383015430006403), 'Standard-F1': np.float64(0.552910911122239), 'PA-F1': 0.8234243885020532, 'Event-based-F1': np.float64(0.6738238080202078), 'R-based-F1': 0.5642524331420636, 'Affiliation-F': 0.9345346597449794}
+2026-02-08 11:19:03.576 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:19:03.576 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:19:04.535 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training pvt_autoencoder_differential_lr on LP
+2026-02-08 11:19:04.559 | INFO     | src.models.pvt_autoencoder.training:train_pvt_autoencoder_differential_lr:267 - Device: cuda | Model on: cuda:0
+2026-02-08 11:19:50.796 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating pvt_autoencoder_differential_lr on LP
+2026-02-08 11:19:51.149 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.1120, std=0.1582
+2026-02-08 11:19:51.150 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.4912, std=0.2056
+2026-02-08 11:19:51.150 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=1.0000, Anomaly min=0.1022
+2026-02-08 11:19:55.922 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.44734284820169645, 'AUC-ROC': 0.9332479473431465, 'VUS-PR': np.float64(0.4669914004345108), 'VUS-ROC': np.float64(0.9374322915399614), 'Standard-F1': np.float64(0.5497546343552535), 'PA-F1': 0.8098331870061457, 'Event-based-F1': np.float64(0.6823235130628121), 'R-based-F1': 0.578493733848954, 'Affiliation-F': 0.9325792494071955}
+2026-02-08 11:19:56.341 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:70 - Using zip: /net/scratch/hscra/plgrid/plgsmendowski12/ts2i_images/Daphnet/169_Daphnet_id_1_HumanActivity_tr_9693_1st_20732_ts2i_SG.zip for transformation SG
+2026-02-08 11:19:57.216 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:19:57.216 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:19:57.222 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training cnn_autoencoder on SG
+2026-02-08 11:19:57.227 | INFO     | src.models.cnn_autoencoder.training:train_autoencoder:22 - Device: cuda | Model on: cuda:0
+2026-02-08 11:20:14.082 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating cnn_autoencoder on SG
+2026-02-08 11:20:14.813 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.0405, std=0.1082
+2026-02-08 11:20:14.813 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.3601, std=0.2711
+2026-02-08 11:20:14.813 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=0.9328, Anomaly min=0.0026
+2026-02-08 11:20:18.830 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.5415626946479474, 'AUC-ROC': 0.9368094760309443, 'VUS-PR': np.float64(0.5384261374968601), 'VUS-ROC': np.float64(0.9409571786837382), 'Standard-F1': np.float64(0.5566921831744229), 'PA-F1': 0.8311407460803748, 'Event-based-F1': np.float64(0.7732990280160086), 'R-based-F1': 0.5947173748631218, 'Affiliation-F': 0.9634341466248679}
+2026-02-08 11:20:18.986 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:20:18.986 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:20:19.201 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training resnet18_autoencoder_frozen on SG
+2026-02-08 11:20:19.214 | INFO     | src.models.resnet18_autoencoder.training:train_autoencoder_frozen:25 - Device: cuda | Model on: cuda:0
+2026-02-08 11:20:22.114 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating resnet18_autoencoder_frozen on SG
+2026-02-08 11:20:22.633 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.2324, std=0.1002
+2026-02-08 11:20:22.633 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.4086, std=0.2697
+2026-02-08 11:20:22.633 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=0.9514, Anomaly min=0.0198
+2026-02-08 11:20:28.404 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.4375223732989596, 'AUC-ROC': 0.7166954066969373, 'VUS-PR': np.float64(0.4254024405795986), 'VUS-ROC': np.float64(0.7373856496156486), 'Standard-F1': np.float64(0.5430806735735713), 'PA-F1': 0.7780082987551867, 'Event-based-F1': np.float64(0.7051282051282045), 'R-based-F1': 0.5184808859871162, 'Affiliation-F': 0.9242388866835729}
+2026-02-08 11:20:28.556 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:20:28.556 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:20:28.768 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training resnet18_autoencoder_progressive_unfreeze on SG
+2026-02-08 11:20:28.782 | INFO     | src.models.resnet18_autoencoder.training:train_autoencoder_progressive_unfreeze:133 - Device: cuda | Model on: cuda:0
+2026-02-08 11:20:32.939 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating resnet18_autoencoder_progressive_unfreeze on SG
+2026-02-08 11:20:33.423 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.2486, std=0.1128
+2026-02-08 11:20:33.424 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.4210, std=0.2578
+2026-02-08 11:20:33.424 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=0.9736, Anomaly min=0.0287
+2026-02-08 11:20:39.369 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.4074015454951867, 'AUC-ROC': 0.7191193678974914, 'VUS-PR': np.float64(0.40278516665335573), 'VUS-ROC': np.float64(0.7409384215069441), 'Standard-F1': np.float64(0.5448046558962317), 'PA-F1': 0.7818274283776911, 'Event-based-F1': np.float64(0.6639004149377589), 'R-based-F1': 0.5265345826943975, 'Affiliation-F': 0.9177704353813615}
+2026-02-08 11:20:39.521 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:20:39.521 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:20:39.733 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training resnet18_autoencoder_differential_lr on SG
+2026-02-08 11:20:39.747 | INFO     | src.models.resnet18_autoencoder.training:train_autoencoder_differential_lr:271 - Device: cuda | Model on: cuda:0
+2026-02-08 11:20:57.954 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating resnet18_autoencoder_differential_lr on SG
+2026-02-08 11:20:58.349 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.0546, std=0.1468
+2026-02-08 11:20:58.349 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.4671, std=0.2741
+2026-02-08 11:20:58.349 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=0.8549, Anomaly min=0.0150
+2026-02-08 11:21:02.596 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.5419364532658654, 'AUC-ROC': 0.9367463111292508, 'VUS-PR': np.float64(0.5452812259939894), 'VUS-ROC': np.float64(0.9408970511270411), 'Standard-F1': np.float64(0.5974075560786075), 'PA-F1': 0.7953095361269185, 'Event-based-F1': np.float64(0.7114624505928848), 'R-based-F1': 0.5398189746011076, 'Affiliation-F': 0.9311494768986073}
+2026-02-08 11:21:02.755 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:21:02.755 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:21:03.696 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training pvt_autoencoder_frozen on SG
+2026-02-08 11:21:03.720 | INFO     | src.models.pvt_autoencoder.training:train_pvt_autoencoder_frozen:24 - Device: cuda | Model on: cuda:0
+2026-02-08 11:21:19.222 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating pvt_autoencoder_frozen on SG
+2026-02-08 11:21:19.565 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.0585, std=0.1334
+2026-02-08 11:21:19.565 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.3594, std=0.2106
+2026-02-08 11:21:19.565 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=1.0000, Anomaly min=0.0196
+2026-02-08 11:21:23.752 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.42855891375339983, 'AUC-ROC': 0.9219122769084506, 'VUS-PR': np.float64(0.4443714180896634), 'VUS-ROC': np.float64(0.9267629583089206), 'Standard-F1': np.float64(0.501294859736825), 'PA-F1': 0.7972342264477096, 'Event-based-F1': np.float64(0.6365044933374646), 'R-based-F1': 0.4201448555516467, 'Affiliation-F': 0.9023316841433077}
+2026-02-08 11:21:23.908 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:21:23.908 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:21:24.851 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training pvt_autoencoder_progressive_unfreeze on SG
+2026-02-08 11:21:24.877 | INFO     | src.models.pvt_autoencoder.training:train_pvt_autoencoder_progressive_unfreeze:132 - Device: cuda | Model on: cuda:0
+2026-02-08 11:21:36.550 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating pvt_autoencoder_progressive_unfreeze on SG
+2026-02-08 11:21:36.899 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.0533, std=0.1207
+2026-02-08 11:21:36.900 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.3152, std=0.2005
+2026-02-08 11:21:36.900 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=1.0000, Anomaly min=0.0248
+2026-02-08 11:21:40.980 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.4217056022275762, 'AUC-ROC': 0.9177822641054109, 'VUS-PR': np.float64(0.4264156672128446), 'VUS-ROC': np.float64(0.9212856269414467), 'Standard-F1': np.float64(0.5016861707868253), 'PA-F1': 0.7781569965870307, 'Event-based-F1': np.float64(0.6560756730536013), 'R-based-F1': 0.43581208137198413, 'Affiliation-F': 0.9128937676767637}
+2026-02-08 11:21:41.140 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:21:41.140 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:21:42.081 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training pvt_autoencoder_differential_lr on SG
+2026-02-08 11:21:42.105 | INFO     | src.models.pvt_autoencoder.training:train_pvt_autoencoder_differential_lr:267 - Device: cuda | Model on: cuda:0
+2026-02-08 11:21:55.072 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating pvt_autoencoder_differential_lr on SG
+2026-02-08 11:21:55.411 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.0420, std=0.1208
+2026-02-08 11:21:55.411 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.4191, std=0.2802
+2026-02-08 11:21:55.411 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=0.8568, Anomaly min=0.0031
+2026-02-08 11:21:59.542 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.5670510333166926, 'AUC-ROC': 0.9421290944825459, 'VUS-PR': np.float64(0.5774582059917907), 'VUS-ROC': np.float64(0.9475499056997583), 'Standard-F1': np.float64(0.5941979453937838), 'PA-F1': 0.8786435511526005, 'Event-based-F1': np.float64(0.7738095238095233), 'R-based-F1': 0.5600253360815454, 'Affiliation-F': 0.9460682173460944}
+2026-02-08 11:21:59.955 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:70 - Using zip: /net/scratch/hscra/plgrid/plgsmendowski12/ts2i_images/Daphnet/169_Daphnet_id_1_HumanActivity_tr_9693_1st_20732_ts2i_GASF.zip for transformation GASF
+2026-02-08 11:22:00.880 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:22:00.880 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:22:00.886 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training cnn_autoencoder on GASF
+2026-02-08 11:22:00.891 | INFO     | src.models.cnn_autoencoder.training:train_autoencoder:22 - Device: cuda | Model on: cuda:0
+2026-02-08 11:22:25.540 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating cnn_autoencoder on GASF
+2026-02-08 11:22:26.026 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.2519, std=0.1797
+2026-02-08 11:22:26.026 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.2085, std=0.1145
+2026-02-08 11:22:26.027 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=1.0000, Anomaly min=0.0479
+2026-02-08 11:22:31.941 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.06950260504973721, 'AUC-ROC': 0.46572159016830206, 'VUS-PR': np.float64(0.0742997317160083), 'VUS-ROC': np.float64(0.4753061879448387), 'Standard-F1': np.float64(0.15932660257573897), 'PA-F1': 0.4139811118683672, 'Event-based-F1': np.float64(0.16285472257517986), 'R-based-F1': 0.14893907126350178, 'Affiliation-F': 0.8410651901182881}
+2026-02-08 11:22:32.098 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:22:32.098 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:22:32.311 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training resnet18_autoencoder_frozen on GASF
+2026-02-08 11:22:32.326 | INFO     | src.models.resnet18_autoencoder.training:train_autoencoder_frozen:25 - Device: cuda | Model on: cuda:0
+2026-02-08 11:22:46.846 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating resnet18_autoencoder_frozen on GASF
+2026-02-08 11:22:47.375 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.2683, std=0.1759
+2026-02-08 11:22:47.375 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.2585, std=0.1141
+2026-02-08 11:22:47.375 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=1.0000, Anomaly min=0.0807
+2026-02-08 11:22:53.496 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.07773188014747232, 'AUC-ROC': 0.5250460658388825, 'VUS-PR': np.float64(0.08240104363269693), 'VUS-ROC': np.float64(0.530876633023714), 'Standard-F1': np.float64(0.1727239362139442), 'PA-F1': 0.44315915436777026, 'Event-based-F1': np.float64(0.17489941886455054), 'R-based-F1': 0.14775906143353548, 'Affiliation-F': 0.7993474581074318}
+2026-02-08 11:22:53.648 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:22:53.648 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:22:53.861 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training resnet18_autoencoder_progressive_unfreeze on GASF
+2026-02-08 11:22:53.875 | INFO     | src.models.resnet18_autoencoder.training:train_autoencoder_progressive_unfreeze:133 - Device: cuda | Model on: cuda:0
+2026-02-08 11:23:13.905 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating resnet18_autoencoder_progressive_unfreeze on GASF
+2026-02-08 11:23:14.741 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.2031, std=0.1279
+2026-02-08 11:23:14.741 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.2244, std=0.0941
+2026-02-08 11:23:14.741 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=1.0000, Anomaly min=0.0690
+2026-02-08 11:23:20.170 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.0915155003947467, 'AUC-ROC': 0.5856982029585468, 'VUS-PR': np.float64(0.09738697533111636), 'VUS-ROC': np.float64(0.589691778108516), 'Standard-F1': np.float64(0.1879540432564592), 'PA-F1': 0.43662802122224403, 'Event-based-F1': np.float64(0.1901782552237042), 'R-based-F1': 0.1472204498743923, 'Affiliation-F': 0.7872110397495805}
+2026-02-08 11:23:20.326 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:23:20.326 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:23:20.539 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training resnet18_autoencoder_differential_lr on GASF
+2026-02-08 11:23:20.553 | INFO     | src.models.resnet18_autoencoder.training:train_autoencoder_differential_lr:271 - Device: cuda | Model on: cuda:0
+2026-02-08 11:23:39.542 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating resnet18_autoencoder_differential_lr on GASF
+2026-02-08 11:23:39.984 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.3142, std=0.2078
+2026-02-08 11:23:39.984 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.3568, std=0.1899
+2026-02-08 11:23:39.984 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=1.0000, Anomaly min=0.0944
+2026-02-08 11:23:46.644 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.0998419518053262, 'AUC-ROC': 0.5810774960461201, 'VUS-PR': np.float64(0.10573898655732035), 'VUS-ROC': np.float64(0.5938132645109955), 'Standard-F1': np.float64(0.18053575878844305), 'PA-F1': 0.6808206958073149, 'Event-based-F1': np.float64(0.24498430462672283), 'R-based-F1': 0.1658974099750299, 'Affiliation-F': 0.8116304973919135}
+2026-02-08 11:23:46.805 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:23:46.806 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:23:47.746 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training pvt_autoencoder_frozen on GASF
+2026-02-08 11:23:47.769 | INFO     | src.models.pvt_autoencoder.training:train_pvt_autoencoder_frozen:24 - Device: cuda | Model on: cuda:0
+2026-02-08 11:24:05.756 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating pvt_autoencoder_frozen on GASF
+2026-02-08 11:24:06.143 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.2065, std=0.1461
+2026-02-08 11:24:06.143 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.2082, std=0.1069
+2026-02-08 11:24:06.143 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=1.0000, Anomaly min=0.0558
+2026-02-08 11:24:11.632 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.08254504164967565, 'AUC-ROC': 0.5410422856624582, 'VUS-PR': np.float64(0.08769991136209908), 'VUS-ROC': np.float64(0.5476855958310808), 'Standard-F1': np.float64(0.17328223234694146), 'PA-F1': 0.4136955291454443, 'Event-based-F1': np.float64(0.17545613596600831), 'R-based-F1': 0.16129070929146297, 'Affiliation-F': 0.8152709071791191}
+2026-02-08 11:24:11.786 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:24:11.786 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:24:12.726 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training pvt_autoencoder_progressive_unfreeze on GASF
+2026-02-08 11:24:12.751 | INFO     | src.models.pvt_autoencoder.training:train_pvt_autoencoder_progressive_unfreeze:132 - Device: cuda | Model on: cuda:0
+2026-02-08 11:24:42.244 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating pvt_autoencoder_progressive_unfreeze on GASF
+2026-02-08 11:24:42.647 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.0899, std=0.0834
+2026-02-08 11:24:42.647 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.0938, std=0.0558
+2026-02-08 11:24:42.647 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=1.0000, Anomaly min=0.0250
+2026-02-08 11:24:46.890 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.08797789576131851, 'AUC-ROC': 0.5699167438007293, 'VUS-PR': np.float64(0.09581644276418073), 'VUS-ROC': np.float64(0.5810261485424238), 'Standard-F1': np.float64(0.19674216517766258), 'PA-F1': 0.482406015037594, 'Event-based-F1': np.float64(0.2006269592476487), 'R-based-F1': 0.16610302080431616, 'Affiliation-F': 0.8020537270040586}
+2026-02-08 11:24:47.046 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:24:47.046 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:24:47.998 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training pvt_autoencoder_differential_lr on GASF
+2026-02-08 11:24:48.021 | INFO     | src.models.pvt_autoencoder.training:train_pvt_autoencoder_differential_lr:267 - Device: cuda | Model on: cuda:0
+2026-02-08 11:25:14.483 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating pvt_autoencoder_differential_lr on GASF
+2026-02-08 11:25:14.872 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.2899, std=0.2007
+2026-02-08 11:25:14.873 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.2811, std=0.1496
+2026-02-08 11:25:14.873 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=1.0000, Anomaly min=0.0402
+2026-02-08 11:25:21.201 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.07839052696600352, 'AUC-ROC': 0.521517852587696, 'VUS-PR': np.float64(0.08382611556462931), 'VUS-ROC': np.float64(0.5348400598981948), 'Standard-F1': np.float64(0.1751797556055434), 'PA-F1': 0.34609034969233077, 'Event-based-F1': np.float64(0.1758122565695408), 'R-based-F1': 0.1610610517861352, 'Affiliation-F': 0.813195059574881}
+2026-02-08 11:25:21.630 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:70 - Using zip: /net/scratch/hscra/plgrid/plgsmendowski12/ts2i_images/Daphnet/169_Daphnet_id_1_HumanActivity_tr_9693_1st_20732_ts2i_GADF.zip for transformation GADF
+2026-02-08 11:25:22.551 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:25:22.551 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:25:22.558 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training cnn_autoencoder on GADF
+2026-02-08 11:25:22.562 | INFO     | src.models.cnn_autoencoder.training:train_autoencoder:22 - Device: cuda | Model on: cuda:0
+2026-02-08 11:26:00.756 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating cnn_autoencoder on GADF
+2026-02-08 11:26:01.249 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.2765, std=0.1735
+2026-02-08 11:26:01.249 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.1737, std=0.0768
+2026-02-08 11:26:01.249 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=1.0000, Anomaly min=0.0399
+2026-02-08 11:26:07.312 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.05415213848021245, 'AUC-ROC': 0.3109542839974961, 'VUS-PR': np.float64(0.05783226434322705), 'VUS-ROC': np.float64(0.31581311783131794), 'Standard-F1': np.float64(0.14883523130884915), 'PA-F1': 0.27086253025863166, 'Event-based-F1': np.float64(0.14811960047531858), 'R-based-F1': 0.23984834304402286, 'Affiliation-F': 0.8031319880326222}
+2026-02-08 11:26:07.473 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:26:07.473 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:26:07.686 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training resnet18_autoencoder_frozen on GADF
+2026-02-08 11:26:07.701 | INFO     | src.models.resnet18_autoencoder.training:train_autoencoder_frozen:25 - Device: cuda | Model on: cuda:0
+2026-02-08 11:26:15.562 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating resnet18_autoencoder_frozen on GADF
+2026-02-08 11:26:16.119 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.4778, std=0.1509
+2026-02-08 11:26:16.119 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.5846, std=0.1819
+2026-02-08 11:26:16.119 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=1.0000, Anomaly min=0.1518
+2026-02-08 11:26:24.363 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.22901311708284128, 'AUC-ROC': 0.6740477121753586, 'VUS-PR': np.float64(0.2498913882930066), 'VUS-ROC': np.float64(0.6995015370648193), 'Standard-F1': np.float64(0.3561594586936264), 'PA-F1': 0.8927280032141423, 'Event-based-F1': np.float64(0.6140158172231981), 'R-based-F1': 0.3761455543153335, 'Affiliation-F': 0.8867315718770549}
+2026-02-08 11:26:24.631 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:26:24.631 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:26:24.844 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training resnet18_autoencoder_progressive_unfreeze on GADF
+2026-02-08 11:26:24.858 | INFO     | src.models.resnet18_autoencoder.training:train_autoencoder_progressive_unfreeze:133 - Device: cuda | Model on: cuda:0
+2026-02-08 11:26:32.084 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating resnet18_autoencoder_progressive_unfreeze on GADF
+2026-02-08 11:26:32.629 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.4799, std=0.1513
+2026-02-08 11:26:32.629 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.5865, std=0.1826
+2026-02-08 11:26:32.629 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=1.0000, Anomaly min=0.1526
+2026-02-08 11:26:40.937 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.22889255815954046, 'AUC-ROC': 0.6734136337391273, 'VUS-PR': np.float64(0.25040071682532145), 'VUS-ROC': np.float64(0.6987646000258961), 'Standard-F1': np.float64(0.3528032273318895), 'PA-F1': 0.9017857142857143, 'Event-based-F1': np.float64(0.6140158172231981), 'R-based-F1': 0.3761455543153335, 'Affiliation-F': 0.8867315718770549}
+2026-02-08 11:26:41.096 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:26:41.096 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:26:41.300 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training resnet18_autoencoder_differential_lr on GADF
+2026-02-08 11:26:41.313 | INFO     | src.models.resnet18_autoencoder.training:train_autoencoder_differential_lr:271 - Device: cuda | Model on: cuda:0
+2026-02-08 11:26:51.842 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating resnet18_autoencoder_differential_lr on GADF
+2026-02-08 11:26:52.304 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.4802, std=0.1517
+2026-02-08 11:26:52.304 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.5870, std=0.1835
+2026-02-08 11:26:52.304 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=1.0000, Anomaly min=0.1508
+2026-02-08 11:27:00.583 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.2289308073540229, 'AUC-ROC': 0.6734452161899741, 'VUS-PR': np.float64(0.24955950261658205), 'VUS-ROC': np.float64(0.6985872297691103), 'Standard-F1': np.float64(0.3528032273318895), 'PA-F1': 0.9017857142857143, 'Event-based-F1': np.float64(0.6249999999999994), 'R-based-F1': 0.38428881300793627, 'Affiliation-F': 0.8867315718770549}
+2026-02-08 11:27:00.738 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:27:00.738 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:27:01.677 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training pvt_autoencoder_frozen on GADF
+2026-02-08 11:27:01.700 | INFO     | src.models.pvt_autoencoder.training:train_pvt_autoencoder_frozen:24 - Device: cuda | Model on: cuda:0
+2026-02-08 11:27:05.066 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating pvt_autoencoder_frozen on GADF
+2026-02-08 11:27:05.450 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.4809, std=0.1515
+2026-02-08 11:27:05.450 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.5873, std=0.1833
+2026-02-08 11:27:05.450 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=1.0000, Anomaly min=0.1518
+2026-02-08 11:27:13.795 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.22846039995080644, 'AUC-ROC': 0.6724880249873872, 'VUS-PR': np.float64(0.24936105256459284), 'VUS-ROC': np.float64(0.6977276043115178), 'Standard-F1': np.float64(0.3528032273318895), 'PA-F1': 0.9017857142857143, 'Event-based-F1': np.float64(0.6249999999999994), 'R-based-F1': 0.38428881300793627, 'Affiliation-F': 0.8867315718770549}
+2026-02-08 11:27:13.950 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:27:13.951 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:27:14.965 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training pvt_autoencoder_progressive_unfreeze on GADF
+2026-02-08 11:27:14.989 | INFO     | src.models.pvt_autoencoder.training:train_pvt_autoencoder_progressive_unfreeze:132 - Device: cuda | Model on: cuda:0
+2026-02-08 11:27:26.351 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating pvt_autoencoder_progressive_unfreeze on GADF
+2026-02-08 11:27:26.741 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.4871, std=0.1535
+2026-02-08 11:27:26.741 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.5951, std=0.1858
+2026-02-08 11:27:26.741 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=1.0000, Anomaly min=0.1557
+2026-02-08 11:27:35.028 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.2268052937373443, 'AUC-ROC': 0.6726564647252367, 'VUS-PR': np.float64(0.24644554710034322), 'VUS-ROC': np.float64(0.6978042933724123), 'Standard-F1': np.float64(0.3431036241164451), 'PA-F1': 0.8927280032141423, 'Event-based-F1': np.float64(0.6249999999999994), 'R-based-F1': 0.38428881300793627, 'Affiliation-F': 0.8867315718770549}
+2026-02-08 11:27:35.191 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:27:35.191 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:27:36.133 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training pvt_autoencoder_differential_lr on GADF
+2026-02-08 11:27:36.158 | INFO     | src.models.pvt_autoencoder.training:train_pvt_autoencoder_differential_lr:267 - Device: cuda | Model on: cuda:0
+2026-02-08 11:27:49.000 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating pvt_autoencoder_differential_lr on GADF
+2026-02-08 11:27:49.394 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.4826, std=0.1526
+2026-02-08 11:27:49.394 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.5893, std=0.1835
+2026-02-08 11:27:49.394 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=1.0000, Anomaly min=0.1557
+2026-02-08 11:27:57.665 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.22541262821054026, 'AUC-ROC': 0.6721997338976065, 'VUS-PR': np.float64(0.24463447068942773), 'VUS-ROC': np.float64(0.6969950439842205), 'Standard-F1': np.float64(0.3431036241164451), 'PA-F1': 0.8927280032141423, 'Event-based-F1': np.float64(0.6249999999999994), 'R-based-F1': 0.38428881300793627, 'Affiliation-F': 0.8794871100284086}
+2026-02-08 11:27:58.204 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:70 - Using zip: /net/scratch/hscra/plgrid/plgsmendowski12/ts2i_images/Daphnet/169_Daphnet_id_1_HumanActivity_tr_9693_1st_20732_ts2i_MTF.zip for transformation MTF
+2026-02-08 11:27:59.224 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:27:59.224 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:27:59.231 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training cnn_autoencoder on MTF
+2026-02-08 11:27:59.239 | INFO     | src.models.cnn_autoencoder.training:train_autoencoder:22 - Device: cuda | Model on: cuda:0
+2026-02-08 11:28:26.532 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating cnn_autoencoder on MTF
+2026-02-08 11:28:27.028 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.3153, std=0.1654
+2026-02-08 11:28:27.028 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.4386, std=0.0980
+2026-02-08 11:28:27.029 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=1.0000, Anomaly min=0.2925
+2026-02-08 11:28:33.729 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.14949013422353613, 'AUC-ROC': 0.7612377729351353, 'VUS-PR': np.float64(0.16052697410234967), 'VUS-ROC': np.float64(0.7599904504325448), 'Standard-F1': np.float64(0.2765184328003918), 'PA-F1': 0.730960976448341, 'Event-based-F1': np.float64(0.28509451502943883), 'R-based-F1': 0.22831666551514665, 'Affiliation-F': 0.8065841826852773}
+2026-02-08 11:28:33.888 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:28:33.889 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:28:34.102 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training resnet18_autoencoder_frozen on MTF
+2026-02-08 11:28:34.116 | INFO     | src.models.resnet18_autoencoder.training:train_autoencoder_frozen:25 - Device: cuda | Model on: cuda:0
+2026-02-08 11:28:52.416 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating resnet18_autoencoder_frozen on MTF
+2026-02-08 11:28:52.984 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.2217, std=0.1396
+2026-02-08 11:28:52.984 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.3583, std=0.2046
+2026-02-08 11:28:52.984 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=1.0000, Anomaly min=0.1171
+2026-02-08 11:28:58.720 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.2049323098771929, 'AUC-ROC': 0.7233161573389113, 'VUS-PR': np.float64(0.1857325095206585), 'VUS-ROC': np.float64(0.6935207887645488), 'Standard-F1': np.float64(0.2883844336732676), 'PA-F1': 0.7353856796956071, 'Event-based-F1': np.float64(0.3999999999999995), 'R-based-F1': 0.2290829793001306, 'Affiliation-F': 0.8075389492523893}
+2026-02-08 11:28:58.877 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:28:58.877 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:28:59.089 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training resnet18_autoencoder_progressive_unfreeze on MTF
+2026-02-08 11:28:59.104 | INFO     | src.models.resnet18_autoencoder.training:train_autoencoder_progressive_unfreeze:133 - Device: cuda | Model on: cuda:0
+2026-02-08 11:29:26.053 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating resnet18_autoencoder_progressive_unfreeze on MTF
+2026-02-08 11:29:26.586 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.1566, std=0.1039
+2026-02-08 11:29:26.586 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.1665, std=0.0503
+2026-02-08 11:29:26.586 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=1.0000, Anomaly min=0.0870
+2026-02-08 11:29:31.462 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.09197685744771793, 'AUC-ROC': 0.600874234631696, 'VUS-PR': np.float64(0.10000276826273487), 'VUS-ROC': np.float64(0.5980888929521778), 'Standard-F1': np.float64(0.19521055920349112), 'PA-F1': 0.47155373183985805, 'Event-based-F1': np.float64(0.19343568998804797), 'R-based-F1': 0.14771354155770167, 'Affiliation-F': 0.7633421415937705}
+2026-02-08 11:29:31.614 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:29:31.614 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:29:31.826 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training resnet18_autoencoder_differential_lr on MTF
+2026-02-08 11:29:31.839 | INFO     | src.models.resnet18_autoencoder.training:train_autoencoder_differential_lr:271 - Device: cuda | Model on: cuda:0
+2026-02-08 11:30:03.667 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating resnet18_autoencoder_differential_lr on MTF
+2026-02-08 11:30:04.101 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.1719, std=0.1140
+2026-02-08 11:30:04.101 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.2016, std=0.0717
+2026-02-08 11:30:04.101 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=1.0000, Anomaly min=0.0934
+2026-02-08 11:30:09.209 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.10822291601899883, 'AUC-ROC': 0.6496755996414177, 'VUS-PR': np.float64(0.11380504859390188), 'VUS-ROC': np.float64(0.6404006174725456), 'Standard-F1': np.float64(0.2072273770264652), 'PA-F1': 0.5496380558428128, 'Event-based-F1': np.float64(0.20919175911251953), 'R-based-F1': 0.1506093438313795, 'Affiliation-F': 0.761828865784231}
+2026-02-08 11:30:09.367 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:30:09.367 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:30:10.307 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training pvt_autoencoder_frozen on MTF
+2026-02-08 11:30:10.331 | INFO     | src.models.pvt_autoencoder.training:train_pvt_autoencoder_frozen:24 - Device: cuda | Model on: cuda:0
+2026-02-08 11:30:34.993 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating pvt_autoencoder_frozen on MTF
+2026-02-08 11:30:35.387 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.1365, std=0.0927
+2026-02-08 11:30:35.387 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.1589, std=0.0950
+2026-02-08 11:30:35.387 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=1.0000, Anomaly min=0.0717
+2026-02-08 11:30:40.117 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.10948168526865484, 'AUC-ROC': 0.6024693589491303, 'VUS-PR': np.float64(0.1026716405122047), 'VUS-ROC': np.float64(0.5994485726737314), 'Standard-F1': np.float64(0.18780499094102707), 'PA-F1': 0.6255274261603375, 'Event-based-F1': np.float64(0.28571428571428525), 'R-based-F1': 0.14755139158397607, 'Affiliation-F': 0.7747839891964028}
+2026-02-08 11:30:40.272 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:30:40.272 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:30:41.219 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training pvt_autoencoder_progressive_unfreeze on MTF
+2026-02-08 11:30:41.245 | INFO     | src.models.pvt_autoencoder.training:train_pvt_autoencoder_progressive_unfreeze:132 - Device: cuda | Model on: cuda:0
+2026-02-08 11:31:12.260 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating pvt_autoencoder_progressive_unfreeze on MTF
+2026-02-08 11:31:12.642 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.1849, std=0.1126
+2026-02-08 11:31:12.642 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.1845, std=0.0526
+2026-02-08 11:31:12.643 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=1.0000, Anomaly min=0.1060
+2026-02-08 11:31:17.866 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.08286759310851291, 'AUC-ROC': 0.560400918968339, 'VUS-PR': np.float64(0.08960848961640977), 'VUS-ROC': np.float64(0.553983485475877), 'Standard-F1': np.float64(0.18855659032004832), 'PA-F1': 0.48974890578207786, 'Event-based-F1': np.float64(0.18995622448477675), 'R-based-F1': 0.1513234221417889, 'Affiliation-F': 0.760367014810363}
+2026-02-08 11:31:18.022 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:31:18.023 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:31:18.971 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training pvt_autoencoder_differential_lr on MTF
+2026-02-08 11:31:18.994 | INFO     | src.models.pvt_autoencoder.training:train_pvt_autoencoder_differential_lr:267 - Device: cuda | Model on: cuda:0
+2026-02-08 11:31:56.894 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating pvt_autoencoder_differential_lr on MTF
+2026-02-08 11:31:57.274 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.1940, std=0.1161
+2026-02-08 11:31:57.275 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.2240, std=0.0691
+2026-02-08 11:31:57.275 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=1.0000, Anomaly min=0.1227
+2026-02-08 11:32:02.615 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.10294841217091152, 'AUC-ROC': 0.6383634135932488, 'VUS-PR': np.float64(0.11079939333515287), 'VUS-ROC': np.float64(0.6436450003236394), 'Standard-F1': np.float64(0.20468895303665113), 'PA-F1': 0.5759956651314007, 'Event-based-F1': np.float64(0.21072031945937625), 'R-based-F1': 0.1645209480979544, 'Affiliation-F': 0.7826182599537308}
+2026-02-08 11:32:03.051 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:70 - Using zip: /net/scratch/hscra/plgrid/plgsmendowski12/ts2i_images/Daphnet/169_Daphnet_id_1_HumanActivity_tr_9693_1st_20732_ts2i_RP.zip for transformation RP
+2026-02-08 11:32:03.957 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:32:03.958 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:32:03.964 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training cnn_autoencoder on RP
+2026-02-08 11:32:03.969 | INFO     | src.models.cnn_autoencoder.training:train_autoencoder:22 - Device: cuda | Model on: cuda:0
+2026-02-08 11:32:34.639 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating cnn_autoencoder on RP
+2026-02-08 11:32:35.103 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.1614, std=0.3062
+2026-02-08 11:32:35.103 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.7355, std=0.0604
+2026-02-08 11:32:35.103 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=1.0000, Anomaly min=0.5451
+2026-02-08 11:32:40.521 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.2565601504950942, 'AUC-ROC': 0.8877384454793771, 'VUS-PR': np.float64(0.27532731849454856), 'VUS-ROC': np.float64(0.8871268899302619), 'Standard-F1': np.float64(0.47509890664060705), 'PA-F1': 0.6633648506678673, 'Event-based-F1': np.float64(0.4884746189696431), 'R-based-F1': 0.3744229780966347, 'Affiliation-F': 0.82979630354893}
+2026-02-08 11:32:40.676 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:32:40.676 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:32:40.892 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training resnet18_autoencoder_frozen on RP
+2026-02-08 11:32:40.906 | INFO     | src.models.resnet18_autoencoder.training:train_autoencoder_frozen:25 - Device: cuda | Model on: cuda:0
+2026-02-08 11:33:15.940 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating resnet18_autoencoder_frozen on RP
+2026-02-08 11:33:16.442 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.1401, std=0.2666
+2026-02-08 11:33:16.442 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.6261, std=0.0534
+2026-02-08 11:33:16.442 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=1.0000, Anomaly min=0.4681
+2026-02-08 11:33:21.564 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.24213411062315507, 'AUC-ROC': 0.879856599477027, 'VUS-PR': np.float64(0.2630911423758197), 'VUS-ROC': np.float64(0.8802753566209359), 'Standard-F1': np.float64(0.4754569941562383), 'PA-F1': 0.6127824760848468, 'Event-based-F1': np.float64(0.47362017475942886), 'R-based-F1': 0.4182226527457335, 'Affiliation-F': 0.8245696001688925}
+2026-02-08 11:33:21.721 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:33:21.721 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:33:21.926 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training resnet18_autoencoder_progressive_unfreeze on RP
+2026-02-08 11:33:21.940 | INFO     | src.models.resnet18_autoencoder.training:train_autoencoder_progressive_unfreeze:133 - Device: cuda | Model on: cuda:0
+2026-02-08 11:33:46.937 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating resnet18_autoencoder_progressive_unfreeze on RP
+2026-02-08 11:33:47.448 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.1603, std=0.3043
+2026-02-08 11:33:47.448 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.7313, std=0.0645
+2026-02-08 11:33:47.448 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=1.0000, Anomaly min=0.5321
+2026-02-08 11:33:52.808 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.2572771785318912, 'AUC-ROC': 0.8865763732495021, 'VUS-PR': np.float64(0.2759089806184171), 'VUS-ROC': np.float64(0.8876338926805513), 'Standard-F1': np.float64(0.468358833647235), 'PA-F1': 0.6669684623509884, 'Event-based-F1': np.float64(0.47302341364099043), 'R-based-F1': 0.40978539508819967, 'Affiliation-F': 0.8243407748674441}
+2026-02-08 11:33:52.966 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:33:52.966 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:33:53.180 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training resnet18_autoencoder_differential_lr on RP
+2026-02-08 11:33:53.194 | INFO     | src.models.resnet18_autoencoder.training:train_autoencoder_differential_lr:271 - Device: cuda | Model on: cuda:0
+2026-02-08 11:34:28.649 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating resnet18_autoencoder_differential_lr on RP
+2026-02-08 11:34:29.055 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.1505, std=0.2857
+2026-02-08 11:34:29.055 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.6897, std=0.0630
+2026-02-08 11:34:29.055 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=1.0000, Anomaly min=0.5039
+2026-02-08 11:34:34.339 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.2698563196946698, 'AUC-ROC': 0.8903622183189552, 'VUS-PR': np.float64(0.28321541766110453), 'VUS-ROC': np.float64(0.8896903921760276), 'Standard-F1': np.float64(0.47087527494926135), 'PA-F1': 0.6824146981627297, 'Event-based-F1': np.float64(0.4784349616748652), 'R-based-F1': 0.4241422276678647, 'Affiliation-F': 0.8295323876369023}
+2026-02-08 11:34:34.508 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:34:34.508 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:34:35.484 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training pvt_autoencoder_frozen on RP
+2026-02-08 11:34:35.509 | INFO     | src.models.pvt_autoencoder.training:train_pvt_autoencoder_frozen:24 - Device: cuda | Model on: cuda:0
+2026-02-08 11:35:14.001 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating pvt_autoencoder_frozen on RP
+2026-02-08 11:35:14.356 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.1601, std=0.3038
+2026-02-08 11:35:14.356 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.7274, std=0.0607
+2026-02-08 11:35:14.356 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=1.0000, Anomaly min=0.5225
+2026-02-08 11:35:19.723 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.24922572411510163, 'AUC-ROC': 0.8837128977060613, 'VUS-PR': np.float64(0.2670102113087823), 'VUS-ROC': np.float64(0.8843761287809137), 'Standard-F1': np.float64(0.47431631864428864), 'PA-F1': 0.6570536643377434, 'Event-based-F1': np.float64(0.48938976141949364), 'R-based-F1': 0.4057563352317513, 'Affiliation-F': 0.8335726028508711}
+2026-02-08 11:35:19.874 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:35:19.875 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:35:20.819 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training pvt_autoencoder_progressive_unfreeze on RP
+2026-02-08 11:35:20.843 | INFO     | src.models.pvt_autoencoder.training:train_pvt_autoencoder_progressive_unfreeze:132 - Device: cuda | Model on: cuda:0
+2026-02-08 11:36:01.460 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating pvt_autoencoder_progressive_unfreeze on RP
+2026-02-08 11:36:01.806 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.1641, std=0.3110
+2026-02-08 11:36:01.806 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.7569, std=0.0653
+2026-02-08 11:36:01.806 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=1.0000, Anomaly min=0.5303
+2026-02-08 11:36:07.210 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.2719121982884304, 'AUC-ROC': 0.8927851591634052, 'VUS-PR': np.float64(0.2887900786846713), 'VUS-ROC': np.float64(0.8938838404816192), 'Standard-F1': np.float64(0.4765006577899617), 'PA-F1': 0.752084396801089, 'Event-based-F1': np.float64(0.4881209503239736), 'R-based-F1': 0.433008482430613, 'Affiliation-F': 0.8317874628596028}
+2026-02-08 11:36:07.369 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:36:07.370 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:36:08.346 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training pvt_autoencoder_differential_lr on RP
+2026-02-08 11:36:08.370 | INFO     | src.models.pvt_autoencoder.training:train_pvt_autoencoder_differential_lr:267 - Device: cuda | Model on: cuda:0
+2026-02-08 11:36:53.791 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating pvt_autoencoder_differential_lr on RP
+2026-02-08 11:36:54.140 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.1634, std=0.3106
+2026-02-08 11:36:54.140 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.7437, std=0.0665
+2026-02-08 11:36:54.140 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=1.0000, Anomaly min=0.5303
+2026-02-08 11:36:59.563 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.25343291437185295, 'AUC-ROC': 0.885782762946173, 'VUS-PR': np.float64(0.2705931899783363), 'VUS-ROC': np.float64(0.8861315365303415), 'Standard-F1': np.float64(0.4731064392142675), 'PA-F1': 0.7457398346549687, 'Event-based-F1': np.float64(0.480279821493185), 'R-based-F1': 0.40348081418851856, 'Affiliation-F': 0.8287498165456476}
+2026-02-08 11:37:00.000 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:70 - Using zip: /net/scratch/hscra/plgrid/plgsmendowski12/ts2i_images/Daphnet/169_Daphnet_id_1_HumanActivity_tr_9693_1st_20732_ts2i_RWT.zip for transformation RWT
+2026-02-08 11:37:00.909 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:37:00.909 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:37:00.916 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training cnn_autoencoder on RWT
+2026-02-08 11:37:00.921 | INFO     | src.models.cnn_autoencoder.training:train_autoencoder:22 - Device: cuda | Model on: cuda:0
+2026-02-08 11:37:35.011 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating cnn_autoencoder on RWT
+2026-02-08 11:37:35.497 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.0339, std=0.0883
+2026-02-08 11:37:35.497 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.2656, std=0.2541
+2026-02-08 11:37:35.497 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=0.6675, Anomaly min=0.0002
+2026-02-08 11:37:39.404 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.4927549360020721, 'AUC-ROC': 0.9112437574046676, 'VUS-PR': np.float64(0.46182775186911584), 'VUS-ROC': np.float64(0.9188556516719819), 'Standard-F1': np.float64(0.4649909486057004), 'PA-F1': 0.7882291119285338, 'Event-based-F1': np.float64(0.6666666666666662), 'R-based-F1': 0.4786997543794125, 'Affiliation-F': 0.9189131905776793}
+2026-02-08 11:37:39.559 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:37:39.559 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:37:39.773 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training resnet18_autoencoder_frozen on RWT
+2026-02-08 11:37:39.788 | INFO     | src.models.resnet18_autoencoder.training:train_autoencoder_frozen:25 - Device: cuda | Model on: cuda:0
+2026-02-08 11:38:01.748 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating resnet18_autoencoder_frozen on RWT
+2026-02-08 11:38:02.265 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.0598, std=0.1382
+2026-02-08 11:38:02.265 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.3415, std=0.2610
+2026-02-08 11:38:02.265 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=0.7417, Anomaly min=0.0098
+2026-02-08 11:38:06.479 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.4298235426158509, 'AUC-ROC': 0.9046050938444183, 'VUS-PR': np.float64(0.40519440603030676), 'VUS-ROC': np.float64(0.9057929421961421), 'Standard-F1': np.float64(0.44556977071020676), 'PA-F1': 0.7882291119285338, 'Event-based-F1': np.float64(0.6666666666666662), 'R-based-F1': 0.4617087937128525, 'Affiliation-F': 0.9020170081298456}
+2026-02-08 11:38:06.636 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:38:06.636 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:38:06.848 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training resnet18_autoencoder_progressive_unfreeze on RWT
+2026-02-08 11:38:06.863 | INFO     | src.models.resnet18_autoencoder.training:train_autoencoder_progressive_unfreeze:133 - Device: cuda | Model on: cuda:0
+2026-02-08 11:38:23.265 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating resnet18_autoencoder_progressive_unfreeze on RWT
+2026-02-08 11:38:23.770 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.0535, std=0.1321
+2026-02-08 11:38:23.770 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.3394, std=0.2705
+2026-02-08 11:38:23.770 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=0.8241, Anomaly min=0.0033
+2026-02-08 11:38:27.921 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.46121000493848996, 'AUC-ROC': 0.9108470818220321, 'VUS-PR': np.float64(0.43622887329718124), 'VUS-ROC': np.float64(0.9128786067128886), 'Standard-F1': np.float64(0.4573220576823834), 'PA-F1': 0.7882291119285338, 'Event-based-F1': np.float64(0.682220909627879), 'R-based-F1': 0.5123879657146141, 'Affiliation-F': 0.9113041655717361}
+2026-02-08 11:38:28.080 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:38:28.080 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:38:28.293 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training resnet18_autoencoder_differential_lr on RWT
+2026-02-08 11:38:28.307 | INFO     | src.models.resnet18_autoencoder.training:train_autoencoder_differential_lr:271 - Device: cuda | Model on: cuda:0
+2026-02-08 11:38:48.663 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating resnet18_autoencoder_differential_lr on RWT
+2026-02-08 11:38:49.090 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.0538, std=0.1284
+2026-02-08 11:38:49.090 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.3347, std=0.2675
+2026-02-08 11:38:49.090 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=0.6894, Anomaly min=0.0040
+2026-02-08 11:38:53.230 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.45258878003183795, 'AUC-ROC': 0.908374742785232, 'VUS-PR': np.float64(0.419668468796979), 'VUS-ROC': np.float64(0.9091541204730652), 'Standard-F1': np.float64(0.4480996999313568), 'PA-F1': 0.7882291119285338, 'Event-based-F1': np.float64(0.6666666666666662), 'R-based-F1': 0.4648237716875148, 'Affiliation-F': 0.9014154366763958}
+2026-02-08 11:38:53.382 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:38:53.383 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:38:54.331 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training pvt_autoencoder_frozen on RWT
+2026-02-08 11:38:54.354 | INFO     | src.models.pvt_autoencoder.training:train_pvt_autoencoder_frozen:24 - Device: cuda | Model on: cuda:0
+2026-02-08 11:39:20.436 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating pvt_autoencoder_frozen on RWT
+2026-02-08 11:39:20.809 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.0556, std=0.1429
+2026-02-08 11:39:20.809 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.3336, std=0.2370
+2026-02-08 11:39:20.810 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=1.0000, Anomaly min=0.0013
+2026-02-08 11:39:24.968 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.3812690054634651, 'AUC-ROC': 0.9128011447423723, 'VUS-PR': np.float64(0.4103201057087008), 'VUS-ROC': np.float64(0.9190414960107466), 'Standard-F1': np.float64(0.45540434229610566), 'PA-F1': 0.8353559137837349, 'Event-based-F1': np.float64(0.662442801830341), 'R-based-F1': 0.4538912999179822, 'Affiliation-F': 0.9141229885239361}
+2026-02-08 11:39:25.124 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:39:25.124 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:39:26.063 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training pvt_autoencoder_progressive_unfreeze on RWT
+2026-02-08 11:39:26.086 | INFO     | src.models.pvt_autoencoder.training:train_pvt_autoencoder_progressive_unfreeze:132 - Device: cuda | Model on: cuda:0
+2026-02-08 11:39:41.829 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating pvt_autoencoder_progressive_unfreeze on RWT
+2026-02-08 11:39:42.200 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.0656, std=0.1249
+2026-02-08 11:39:42.200 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.3074, std=0.2538
+2026-02-08 11:39:42.200 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=0.8497, Anomaly min=0.0000
+2026-02-08 11:39:46.394 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.385350896040077, 'AUC-ROC': 0.8248131169206624, 'VUS-PR': np.float64(0.36227776854329474), 'VUS-ROC': np.float64(0.8464125427633303), 'Standard-F1': np.float64(0.43244605040898026), 'PA-F1': 0.7780082987551867, 'Event-based-F1': np.float64(0.5999999999999994), 'R-based-F1': 0.44899671506284194, 'Affiliation-F': 0.880657854918156}
+2026-02-08 11:39:46.552 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:39:46.552 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:39:47.496 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training pvt_autoencoder_differential_lr on RWT
+2026-02-08 11:39:47.519 | INFO     | src.models.pvt_autoencoder.training:train_pvt_autoencoder_differential_lr:267 - Device: cuda | Model on: cuda:0
+2026-02-08 11:40:17.717 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating pvt_autoencoder_differential_lr on RWT
+2026-02-08 11:40:18.086 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.0539, std=0.1307
+2026-02-08 11:40:18.086 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.3476, std=0.2750
+2026-02-08 11:40:18.086 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=0.7530, Anomaly min=0.0000
+2026-02-08 11:40:22.228 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.4665285446034445, 'AUC-ROC': 0.9064699484882128, 'VUS-PR': np.float64(0.44417803500600933), 'VUS-ROC': np.float64(0.9147461263107863), 'Standard-F1': np.float64(0.45879097801762236), 'PA-F1': 0.7882291119285338, 'Event-based-F1': np.float64(0.6780434385836825), 'R-based-F1': 0.4804456030543838, 'Affiliation-F': 0.9091755584705778}
+2026-02-08 11:40:22.653 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:70 - Using zip: /net/scratch/hscra/plgrid/plgsmendowski12/ts2i_images/Daphnet/169_Daphnet_id_1_HumanActivity_tr_9693_1st_20732_ts2i_MWT.zip for transformation MWT
+2026-02-08 11:40:24.223 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:40:24.223 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:40:24.229 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training cnn_autoencoder on MWT
+2026-02-08 11:40:24.234 | INFO     | src.models.cnn_autoencoder.training:train_autoencoder:22 - Device: cuda | Model on: cuda:0
+2026-02-08 11:41:01.242 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating cnn_autoencoder on MWT
+2026-02-08 11:41:01.737 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.0710, std=0.1675
+2026-02-08 11:41:01.737 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.4659, std=0.2269
+2026-02-08 11:41:01.738 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=0.6922, Anomaly min=0.0074
+2026-02-08 11:41:06.166 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.5036722197699668, 'AUC-ROC': 0.9279437152137525, 'VUS-PR': np.float64(0.4802237753296301), 'VUS-ROC': np.float64(0.931047979789307), 'Standard-F1': np.float64(0.5106160903161052), 'PA-F1': 0.820786616835736, 'Event-based-F1': np.float64(0.6666666666666662), 'R-based-F1': 0.5124771173020292, 'Affiliation-F': 0.9314085612857856}
+2026-02-08 11:41:06.322 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:41:06.322 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:41:06.535 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training resnet18_autoencoder_frozen on MWT
+2026-02-08 11:41:06.548 | INFO     | src.models.resnet18_autoencoder.training:train_autoencoder_frozen:25 - Device: cuda | Model on: cuda:0
+2026-02-08 11:41:34.590 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating resnet18_autoencoder_frozen on MWT
+2026-02-08 11:41:35.123 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.0889, std=0.2031
+2026-02-08 11:41:35.123 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.5341, std=0.2306
+2026-02-08 11:41:35.123 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=0.8206, Anomaly min=0.0122
+2026-02-08 11:41:39.731 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.4465363885051912, 'AUC-ROC': 0.9223293272209143, 'VUS-PR': np.float64(0.4293218972391077), 'VUS-ROC': np.float64(0.9243031475215134), 'Standard-F1': np.float64(0.4991800351044611), 'PA-F1': 0.7882291119285338, 'Event-based-F1': np.float64(0.6666666666666662), 'R-based-F1': 0.4831341521242661, 'Affiliation-F': 0.928601156003901}
+2026-02-08 11:41:39.895 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:41:39.895 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:41:40.106 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training resnet18_autoencoder_progressive_unfreeze on MWT
+2026-02-08 11:41:40.120 | INFO     | src.models.resnet18_autoencoder.training:train_autoencoder_progressive_unfreeze:133 - Device: cuda | Model on: cuda:0
+2026-02-08 11:42:05.482 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating resnet18_autoencoder_progressive_unfreeze on MWT
+2026-02-08 11:42:06.003 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.0805, std=0.1884
+2026-02-08 11:42:06.003 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.5139, std=0.2441
+2026-02-08 11:42:06.004 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=0.8221, Anomaly min=0.0093
+2026-02-08 11:42:10.544 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.47755746179633896, 'AUC-ROC': 0.9267452016944387, 'VUS-PR': np.float64(0.483470430438007), 'VUS-ROC': np.float64(0.9305316370455926), 'Standard-F1': np.float64(0.5131395043334631), 'PA-F1': 0.8026349125918419, 'Event-based-F1': np.float64(0.7422419252691572), 'R-based-F1': 0.4768660387447069, 'Affiliation-F': 0.9270822550631672}
+2026-02-08 11:42:10.701 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:42:10.701 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:42:10.915 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training resnet18_autoencoder_differential_lr on MWT
+2026-02-08 11:42:10.929 | INFO     | src.models.resnet18_autoencoder.training:train_autoencoder_differential_lr:271 - Device: cuda | Model on: cuda:0
+2026-02-08 11:42:41.754 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating resnet18_autoencoder_differential_lr on MWT
+2026-02-08 11:42:42.184 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.0816, std=0.1883
+2026-02-08 11:42:42.185 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.5173, std=0.2429
+2026-02-08 11:42:42.185 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=0.7826, Anomaly min=0.0094
+2026-02-08 11:42:46.751 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.5033959344286368, 'AUC-ROC': 0.9262714649317374, 'VUS-PR': np.float64(0.48488315724404335), 'VUS-ROC': np.float64(0.9294306327580992), 'Standard-F1': np.float64(0.5212721635440399), 'PA-F1': 0.8209137551917909, 'Event-based-F1': np.float64(0.8343577135832817), 'R-based-F1': 0.49521935301572584, 'Affiliation-F': 0.9325827603478849}
+2026-02-08 11:42:46.906 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:42:46.907 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:42:47.847 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training pvt_autoencoder_frozen on MWT
+2026-02-08 11:42:47.871 | INFO     | src.models.pvt_autoencoder.training:train_pvt_autoencoder_frozen:24 - Device: cuda | Model on: cuda:0
+2026-02-08 11:43:22.306 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating pvt_autoencoder_frozen on MWT
+2026-02-08 11:43:22.684 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.0877, std=0.2059
+2026-02-08 11:43:22.685 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.5332, std=0.2384
+2026-02-08 11:43:22.685 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=1.0000, Anomaly min=0.0083
+2026-02-08 11:43:27.314 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.38321160446240826, 'AUC-ROC': 0.9233359166158513, 'VUS-PR': np.float64(0.39986967017414077), 'VUS-ROC': np.float64(0.9267536351971024), 'Standard-F1': np.float64(0.5019679020523861), 'PA-F1': 0.7738255033557047, 'Event-based-F1': np.float64(0.6095017381228268), 'R-based-F1': 0.5014380932880224, 'Affiliation-F': 0.9225507332828712}
+2026-02-08 11:43:27.466 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:43:27.466 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:43:28.406 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training pvt_autoencoder_progressive_unfreeze on MWT
+2026-02-08 11:43:28.429 | INFO     | src.models.pvt_autoencoder.training:train_pvt_autoencoder_progressive_unfreeze:132 - Device: cuda | Model on: cuda:0
+2026-02-08 11:43:47.181 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating pvt_autoencoder_progressive_unfreeze on MWT
+2026-02-08 11:43:47.553 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.0921, std=0.2010
+2026-02-08 11:43:47.554 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.5456, std=0.2187
+2026-02-08 11:43:47.554 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=0.8000, Anomaly min=0.0134
+2026-02-08 11:43:52.183 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.4706470796190452, 'AUC-ROC': 0.9250616141223764, 'VUS-PR': np.float64(0.4598065357876633), 'VUS-ROC': np.float64(0.9292805429363067), 'Standard-F1': np.float64(0.5098442849703219), 'PA-F1': 0.8148409893992933, 'Event-based-F1': np.float64(0.7407407407407403), 'R-based-F1': 0.4767885853515271, 'Affiliation-F': 0.9334880988982668}
+2026-02-08 11:43:52.341 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:43:52.341 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:43:53.282 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training pvt_autoencoder_differential_lr on MWT
+2026-02-08 11:43:53.306 | INFO     | src.models.pvt_autoencoder.training:train_pvt_autoencoder_differential_lr:267 - Device: cuda | Model on: cuda:0
+2026-02-08 11:44:09.411 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating pvt_autoencoder_differential_lr on MWT
+2026-02-08 11:44:09.786 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.0884, std=0.1964
+2026-02-08 11:44:09.786 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.5260, std=0.2178
+2026-02-08 11:44:09.786 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=0.8089, Anomaly min=0.0102
+2026-02-08 11:44:14.412 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.42677042031350193, 'AUC-ROC': 0.9229455899156425, 'VUS-PR': np.float64(0.40838905991925695), 'VUS-ROC': np.float64(0.9240809727358239), 'Standard-F1': np.float64(0.5240369000208245), 'PA-F1': 0.7487012987012988, 'Event-based-F1': np.float64(0.5851623435516049), 'R-based-F1': 0.46904789663824253, 'Affiliation-F': 0.931163214597399}
+2026-02-08 11:44:14.877 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:70 - Using zip: /net/scratch/hscra/plgrid/plgsmendowski12/ts2i_images/Daphnet/169_Daphnet_id_1_HumanActivity_tr_9693_1st_20732_ts2i_SPIRAL.zip for transformation SPIRAL
+2026-02-08 11:44:15.854 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:44:15.854 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:44:15.861 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training cnn_autoencoder on SPIRAL
+2026-02-08 11:44:15.865 | INFO     | src.models.cnn_autoencoder.training:train_autoencoder:22 - Device: cuda | Model on: cuda:0
+2026-02-08 11:44:46.503 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating cnn_autoencoder on SPIRAL
+2026-02-08 11:44:46.995 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.0413, std=0.1120
+2026-02-08 11:44:46.995 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.3745, std=0.2816
+2026-02-08 11:44:46.995 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=0.9836, Anomaly min=0.0065
+2026-02-08 11:44:51.062 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.5425953571545563, 'AUC-ROC': 0.9371633614417145, 'VUS-PR': np.float64(0.541294840235725), 'VUS-ROC': np.float64(0.9409418976639928), 'Standard-F1': np.float64(0.5645176039290635), 'PA-F1': 0.8253400143163923, 'Event-based-F1': np.float64(0.7580810672139553), 'R-based-F1': 0.5893002902420772, 'Affiliation-F': 0.9634341466248679}
+2026-02-08 11:44:51.226 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:44:51.226 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:44:51.440 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training resnet18_autoencoder_frozen on SPIRAL
+2026-02-08 11:44:51.454 | INFO     | src.models.resnet18_autoencoder.training:train_autoencoder_frozen:25 - Device: cuda | Model on: cuda:0
+2026-02-08 11:45:13.683 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating resnet18_autoencoder_frozen on SPIRAL
+2026-02-08 11:45:14.195 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.0712, std=0.1532
+2026-02-08 11:45:14.195 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.4219, std=0.2483
+2026-02-08 11:45:14.195 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=0.8866, Anomaly min=0.0278
+2026-02-08 11:45:18.590 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.46400815315214516, 'AUC-ROC': 0.9178616251357439, 'VUS-PR': np.float64(0.4369278169736847), 'VUS-ROC': np.float64(0.9196649142448692), 'Standard-F1': np.float64(0.4732526831072673), 'PA-F1': 0.7780082987551867, 'Event-based-F1': np.float64(0.6249999999999994), 'R-based-F1': 0.4007686216165622, 'Affiliation-F': 0.9221663216905222}
+2026-02-08 11:45:18.749 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:45:18.749 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:45:18.962 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training resnet18_autoencoder_progressive_unfreeze on SPIRAL
+2026-02-08 11:45:18.975 | INFO     | src.models.resnet18_autoencoder.training:train_autoencoder_progressive_unfreeze:133 - Device: cuda | Model on: cuda:0
+2026-02-08 11:45:40.048 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating resnet18_autoencoder_progressive_unfreeze on SPIRAL
+2026-02-08 11:45:40.540 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.0604, std=0.1437
+2026-02-08 11:45:40.540 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.4292, std=0.2738
+2026-02-08 11:45:40.540 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=1.0000, Anomaly min=0.0235
+2026-02-08 11:45:44.827 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.4927610398243968, 'AUC-ROC': 0.9286409585516774, 'VUS-PR': np.float64(0.5014322865710805), 'VUS-ROC': np.float64(0.9327797105379065), 'Standard-F1': np.float64(0.5156603069657835), 'PA-F1': 0.8386979450809238, 'Event-based-F1': np.float64(0.7514450867052017), 'R-based-F1': 0.5257691780176104, 'Affiliation-F': 0.9470807045170432}
+2026-02-08 11:45:44.988 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:45:44.988 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:45:45.192 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training resnet18_autoencoder_differential_lr on SPIRAL
+2026-02-08 11:45:45.206 | INFO     | src.models.resnet18_autoencoder.training:train_autoencoder_differential_lr:271 - Device: cuda | Model on: cuda:0
+2026-02-08 11:46:17.644 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating resnet18_autoencoder_differential_lr on SPIRAL
+2026-02-08 11:46:18.053 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.0508, std=0.1217
+2026-02-08 11:46:18.053 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.3902, std=0.2628
+2026-02-08 11:46:18.053 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=1.0000, Anomaly min=0.0209
+2026-02-08 11:46:22.191 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.5088739195157954, 'AUC-ROC': 0.9340091653891971, 'VUS-PR': np.float64(0.5048615435860946), 'VUS-ROC': np.float64(0.9358272414093813), 'Standard-F1': np.float64(0.5384037543874883), 'PA-F1': 0.7915194346289752, 'Event-based-F1': np.float64(0.7680325904624965), 'R-based-F1': 0.533134853547761, 'Affiliation-F': 0.9422729195396624}
+2026-02-08 11:46:22.345 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:46:22.346 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:46:23.297 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training pvt_autoencoder_frozen on SPIRAL
+2026-02-08 11:46:23.320 | INFO     | src.models.pvt_autoencoder.training:train_pvt_autoencoder_frozen:24 - Device: cuda | Model on: cuda:0
+2026-02-08 11:46:46.743 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating pvt_autoencoder_frozen on SPIRAL
+2026-02-08 11:46:47.109 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.0572, std=0.1295
+2026-02-08 11:46:47.109 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.3563, std=0.2373
+2026-02-08 11:46:47.109 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=0.7388, Anomaly min=0.0074
+2026-02-08 11:46:51.294 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.45252632814881966, 'AUC-ROC': 0.9173190548263248, 'VUS-PR': np.float64(0.4383077098268222), 'VUS-ROC': np.float64(0.918526998153059), 'Standard-F1': np.float64(0.48981716508848816), 'PA-F1': 0.7680491551459293, 'Event-based-F1': np.float64(0.6124869201255663), 'R-based-F1': 0.390946418834831, 'Affiliation-F': 0.8786182306499789}
+2026-02-08 11:46:51.451 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:46:51.451 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:46:52.391 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training pvt_autoencoder_progressive_unfreeze on SPIRAL
+2026-02-08 11:46:52.417 | INFO     | src.models.pvt_autoencoder.training:train_pvt_autoencoder_progressive_unfreeze:132 - Device: cuda | Model on: cuda:0
+2026-02-08 11:47:24.271 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating pvt_autoencoder_progressive_unfreeze on SPIRAL
+2026-02-08 11:47:24.631 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.0532, std=0.1322
+2026-02-08 11:47:24.631 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.4395, std=0.2806
+2026-02-08 11:47:24.631 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=1.0000, Anomaly min=0.0158
+2026-02-08 11:47:28.853 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.5414979508824549, 'AUC-ROC': 0.9373374698245878, 'VUS-PR': np.float64(0.5584935477223495), 'VUS-ROC': np.float64(0.9434054651297031), 'Standard-F1': np.float64(0.5920047093611532), 'PA-F1': 0.8786435511526005, 'Event-based-F1': np.float64(0.7738095238095233), 'R-based-F1': 0.572310151621822, 'Affiliation-F': 0.9520031143693563}
+2026-02-08 11:47:29.015 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:170 - Train images: 154
+2026-02-08 11:47:29.015 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:171 - Test images: 581
+2026-02-08 11:47:29.955 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:176 - Training pvt_autoencoder_differential_lr on SPIRAL
+2026-02-08 11:47:29.980 | INFO     | src.models.pvt_autoencoder.training:train_pvt_autoencoder_differential_lr:267 - Device: cuda | Model on: cuda:0
+2026-02-08 11:48:09.350 | INFO     | src.pipelines.train_vision_backbones:run_pipeline:193 - Evaluating pvt_autoencoder_differential_lr on SPIRAL
+2026-02-08 11:48:09.705 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:65 - Normal (26775) reconstruction error: mean=0.0532, std=0.1313
+2026-02-08 11:48:09.705 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:66 - Anomaly (2306) reconstruction error: mean=0.4252, std=0.2718
+2026-02-08 11:48:09.705 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:67 - Overlap? Normal max=0.9366, Anomaly min=0.0086
+2026-02-08 11:48:13.916 | INFO     | src.models.evaluation:evaluate_tsb_ad_nonoverlapping:83 - {'AUC-PR': 0.5366286543468598, 'AUC-ROC': 0.9335038461756486, 'VUS-PR': np.float64(0.5445594627602025), 'VUS-ROC': np.float64(0.9389652355755236), 'Standard-F1': np.float64(0.5827841546469303), 'PA-F1': 0.8237185211644936, 'Event-based-F1': np.float64(0.7407407407407403), 'R-based-F1': 0.5463882840243659, 'Affiliation-F': 0.9432364162839187}
